@@ -29,8 +29,8 @@ while (!file.EndOfStream)
 
     for(int i = 0; i < address.Length; i++)
     {
-        for(int j = 0; j < address.Length; j++)
-        {
+        
+        
             Address newAddress = new Address();
 
             newAddress.Name = address[0];
@@ -41,7 +41,7 @@ while (!file.EndOfStream)
             newAddress.Zip = address[6];
 
             addresses.Add(newAddress);
-        }
+        
     }
 
 
