@@ -9,11 +9,16 @@ while (!file.EndOfStream)
     string line = file.ReadLine();
     //line.Split(",");
     string newLine = line.Replace(",", ", ");
-    foreach(new)
-    newLine.Split(", ");
+    
+    string[] newLineSplited = newLine.Split(", ");
+
+    foreach (string lineSplited in newLineSplited)
+    {
+        Console.WriteLine(lineSplited);
+    }
 
     //string line = file.ReadLine();
-    Console.WriteLine(newLine);
+//    Console.WriteLine(newLineSplited);
 }
 file.Close();
 
