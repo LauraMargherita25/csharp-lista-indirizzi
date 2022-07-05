@@ -8,8 +8,15 @@ internal class Address
     public string Street { get; set; }
     public string City { get; set; }    
     public string Province { get; set; }
-    public int Zip { get; set; }
+    public string Zip { get; set; }
 
-
-    pubblic Addres ( )
+    //public Address(string name, string surname, string street, string city, string province, int zip)
+    //{
+    //    Name = name;
+    //    Surname = surname;
+    //    Street = street;
+    //    City = city;
+    //    Province = province;
+    //    Zip = zip;
+    //}
 }

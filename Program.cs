@@ -5,7 +5,7 @@ StreamReader file = File.OpenText("C:/Users/windo/corso .NET/repos/csharp-lista-
 
 while (!file.EndOfStream)
 {
-    List<Address> data = new List<Address>();
+    List<Address> addresses = new List<Address>();
     //string line = file.ReadLine();
     //string[] row = new string[6];
     //row = line.Split(",");
@@ -29,17 +29,18 @@ while (!file.EndOfStream)
 
     for(int i = 0; i < address.Length; i++)
     {
-        foreach(string data in address)
+        for(int j = 0; j < address.Length; j++)
         {
-            Address.Name = address[0];
-            Address.Surname = address[1];
-            Address.Street = address[2];
-            Address.City = address[3];
-            Address.Province = address[4];
-            Address.Zip = address[6];
-
             Address newAddress = new Address();
 
+            newAddress.Name = address[0];
+            newAddress.Surname = address[1];
+            newAddress.Street = address[2];
+            newAddress.City = address[3];
+            newAddress.Province = address[4];
+            newAddress.Zip = address[6];
+
+            addresses.Add(newAddress);
         }
     }
 
