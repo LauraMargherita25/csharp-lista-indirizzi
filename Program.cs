@@ -3,49 +3,38 @@
 
 StreamReader file = File.OpenText("C:/Users/windo/corso .NET/repos/csharp-lista-indirizzi/addresses.csv");
 
+List<Address> addresses = new List<Address>();
 while (!file.EndOfStream)
 {
-    List<Address> addresses = new List<Address>();
-    //string line = file.ReadLine();
-    //string[] row = new string[6];
-    //row = line.Split(",");
-    //string newLine = line.Replace(",", ", ");
-    
 
-    //foreach (string lineSplited in newLineSplited)
-    //{
-    //    Console.WriteLine(lineSplited);
-    //    Console.WriteLine();
-    //}
-
-
-
-    //string line = file.ReadLine();
-    //    Console.WriteLine(newLineSplited);
-
-    string rows = file.ReadLine();
-    string[] address = new string[6];
-    address = rows.Split(",");
-
-    for(int i = 0; i < address.Length; i++)
+    try
     {
-        
-        
-            Address newAddress = new Address();
+        string line = file.ReadLine();
+        string[] addressData = new string[6];
+        addressData = line.Split(",");
 
-            newAddress.Name = address[0];
-            newAddress.Surname = address[1];
-            newAddress.Street = address[2];
-            newAddress.City = address[3];
-            newAddress.Province = address[4];
-            newAddress.Zip = address[6];
+        if(addressData.Length > 6)
+        {
+            throw new IndexOutOfRangeException();
+        }
 
-            addresses.Add(newAddress);
-        
+        Address newAddress = new Address(addressData[0], addressData[1], addressData[2], addressData[3], addressData[4], addressData[5]);
+
+        addresses.Add(newAddress);
+
     }
+    catch (IndexOutOfRangeException)
+    {
+        Console.WriteLine("Stai cercando di inserire più elementi di quelli che l'array può contenere");
+        if ()
+        {
 
-
-
-
+        }
+    }
 }
 file.Close();
+
+foreach (Address address in addresses)
+{
+    address.Print();
+}
