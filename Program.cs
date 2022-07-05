@@ -5,11 +5,15 @@ StreamReader file = File.OpenText("C:/Users/windo/corso .NET/repos/csharp-lista-
 
 while (!file.EndOfStream)
 {
-
+    List<DataItem> data = new List<DataItem>();
     string line = file.ReadLine();
+    //line.Split(",");
+    string newLine = line.Replace(",", ", ");
+    foreach(new)
+    newLine.Split(", ");
 
     //string line = file.ReadLine();
-    //Console.WriteLine(line);
+    Console.WriteLine(newLine);
 }
 file.Close();
 
